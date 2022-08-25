@@ -1,24 +1,62 @@
 {
+  "id": "did:web:zkp-ld.org",
   "@context": [
     "https://www.w3.org/ns/did/v1",
     "https://w3id.org/security/suites/jws-2020/v1",
-    "https://zkp-ld.org/bbs-termwise-2021.jsonld"
+    "https://zkp-ld.org/bbs-termwise-2021.jsonld",
+    {
+      "@base": "did:web:zkp-ld.org"
+    }
   ],
-  "id": "did:web:zkp-ld.org",
+  "service": [
+    {
+      "id": "#linkeddomains",
+      "type": "LinkedDomains",
+      "serviceEndpoint": {
+        "origins": [
+          "https://zkp-ld.org/"
+        ]
+      }
+    },
+    {
+      "id": "#hub",
+      "type": "IdentityHub",
+      "serviceEndpoint": {
+        "instances": [
+          "https://hub.did.msidentity.com/v1.0/4e1cecd1-c766-4767-b618-d8c6451362cf"
+        ]
+      }
+    }
+  ],
   "verificationMethod": [
     {
-      "id": "did:web:zkp-ld.org#bls12381g2",
-      "type": "JsonWebKey2020",
+      "id": "#bls12381g2",
       "controller": "did:web:zkp-ld.org",
+      "type": "JsonWebKey2020",
       "publicKeyJwk": {
         "kid": "did:web:zkp-ld.org#bls12381g2",
         "kty": "OKP",
         "crv": "Bls12381G2",
         "x": "hCoqNweVC2xVDefGNWN5SRJRrv0MrBoC-2wW3y_a8v_74KZaBmectYSxeBm8QSoDDZtuuhIkokd_0iWZ1Qbu8Hz6LvT-LBznyiE4NBL6nYUzYI-Eg8-3eCBt03QAdRgS"
       }
+    },
+    {
+      "id": "#c0b449ac2c564ca59374dd989422f391vcSigningKey-4dc0a",
+      "controller": "did:web:zkp-ld.org",
+      "type": "EcdsaSecp256k1VerificationKey2019",
+      "publicKeyJwk": {
+        "crv": "secp256k1",
+        "kty": "EC",
+        "x": "cbl1V9OhOqwPLGgOPsdb7m1TwOV_BzWJSJjHl6hHNuQ",
+        "y": "QnQ48heZ60rjFCfqF5-W9lTJHyI2Es71nSIMh-d9XxA"
+      }
     }
   ],
+  "authentication": [
+    "#c0b449ac2c564ca59374dd989422f391vcSigningKey-4dc0a"
+  ],
   "assertionMethod": [
-    "did:web:zkp-ld.org#bls12381g2"
+    "#c0b449ac2c564ca59374dd989422f391vcSigningKey-4dc0a",
+    "#bls12381g2"
   ]
 }
