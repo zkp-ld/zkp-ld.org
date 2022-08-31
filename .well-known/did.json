@@ -2,8 +2,6 @@
   "id": "did:web:zkp-ld.org",
   "@context": [
     "https://www.w3.org/ns/did/v1",
-    "https://w3id.org/security/suites/jws-2020/v1",
-    "https://zkp-ld.org/bbs-termwise-2021.jsonld",
     {
       "@base": "did:web:zkp-ld.org"
     }
@@ -30,17 +28,6 @@
   ],
   "verificationMethod": [
     {
-      "id": "#bls12381g2",
-      "controller": "did:web:zkp-ld.org",
-      "type": "JsonWebKey2020",
-      "publicKeyJwk": {
-        "kid": "did:web:zkp-ld.org#bls12381g2",
-        "kty": "OKP",
-        "crv": "Bls12381G2",
-        "x": "hCoqNweVC2xVDefGNWN5SRJRrv0MrBoC-2wW3y_a8v_74KZaBmectYSxeBm8QSoDDZtuuhIkokd_0iWZ1Qbu8Hz6LvT-LBznyiE4NBL6nYUzYI-Eg8-3eCBt03QAdRgS"
-      }
-    },
-    {
       "id": "#c0b449ac2c564ca59374dd989422f391vcSigningKey-4dc0a",
       "controller": "did:web:zkp-ld.org",
       "type": "EcdsaSecp256k1VerificationKey2019",
@@ -56,7 +43,6 @@
     "#c0b449ac2c564ca59374dd989422f391vcSigningKey-4dc0a"
   ],
   "assertionMethod": [
-    "#c0b449ac2c564ca59374dd989422f391vcSigningKey-4dc0a",
-    "#bls12381g2"
+    "#c0b449ac2c564ca59374dd989422f391vcSigningKey-4dc0a"
   ]
 }
