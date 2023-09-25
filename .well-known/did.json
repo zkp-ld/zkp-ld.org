@@ -15,15 +15,6 @@
           "https://zkp-ld.org/"
         ]
       }
-    },
-    {
-      "id": "#hub",
-      "type": "IdentityHub",
-      "serviceEndpoint": {
-        "instances": [
-          "https://hub.did.msidentity.com/v1.0/4e1cecd1-c766-4767-b618-d8c6451362cf"
-        ]
-      }
     }
   ],
   "verificationMethod": [
